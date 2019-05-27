@@ -15,7 +15,7 @@ const IndexPage = ({data}) => (
       title = "Cafe Mary Josephine"
       styleClass = "default-background"
     />
-    <Info></Info>
+    <Info />
   </Layout>
 );
 
@@ -24,7 +24,7 @@ export const query = graphql`
     img: file(relativePath: {eq: "default-background.jpeg"}){
       childImageSharp {
         fluid {
-          src
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }

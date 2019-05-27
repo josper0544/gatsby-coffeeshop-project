@@ -1,4 +1,4 @@
-  import React, { Component } from 'react';
+import React, { Component } from 'react';
 import {Link} from "gatsby";
 import Logo from "../../images/Logo.svg";
 import {FaCartArrowDown} from "react-icons/fa";
@@ -49,18 +49,20 @@ export default class Navbar extends Component {
           <div className = {this.state.css}>
               <ul className="navbar-nav mx-auto">
                   {this.state.links.map(link => {
-                      return(
+                      return (
                           <li key = {link.id} className = "nav-item">
                               <Link to={link.path} className = "nav-link text-capitalize">
                                 {link.text}
                               </Link>
                           </li>
+                          
                       );
                   })}
+                  <li className="nav-item ml-sm-5">
+                        <FaCartArrowDown className="cart-icon" />
+                  </li>
               </ul>
-              <li className="nav-item ml-sm-5">
-                  <FaCartArrowDown className="cart-icon" />
-              </li>
+              
           </div>
       </nav>
     );
